@@ -1,0 +1,11 @@
+[alias]
+	st = status
+[push]
+	default = simple
+[user]
+	name = Erik Nygren
+	email = erik.nygren6@gmail.com
+[merge]
+	tool = meld
+[core]
+	editor = /usr/bin/vim
