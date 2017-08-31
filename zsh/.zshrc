@@ -4,7 +4,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 eval "$(rbenv init -)"
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/erik_nygren/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
