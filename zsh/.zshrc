@@ -105,4 +105,4 @@ alias fdweb="cd ~/dev/fd-v5-web/"
 alias fdmonitor="cd ~/dev/fd-monitor/"
 
 eval "$(thefuck --alias)"
-
+prompt_context() {}
