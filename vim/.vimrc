@@ -33,6 +33,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'gcorne/vim-sass-lint'
+Plugin 'posva/vim-vue'
 
 Plugin 'bling/vim-airline'
 
