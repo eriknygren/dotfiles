@@ -103,6 +103,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias fdapi="cd ~/dev/fd-v5-api/"
 alias fdweb="cd ~/dev/fd-v5-web/"
 alias fdmonitor="cd ~/dev/fd-monitor/"
+alias captionhub="cd ~/dev/captionhub/"
 
 eval "$(thefuck --alias)"
 prompt_context() {}
