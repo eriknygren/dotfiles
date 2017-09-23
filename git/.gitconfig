@@ -8,5 +8,10 @@
 	email = erik.nygren6@gmail.com
 [merge]
 	tool = meld
+[mergetool]
+  prompt = false
+[mergetool "meld"]
+  trustExitCode = true
+  cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
 [core]
 	editor = /usr/bin/vim
