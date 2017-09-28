@@ -31,7 +31,6 @@ Plugin 'mileszs/ack.vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'ngmy/vim-rubocop'
 Plugin 'gcorne/vim-sass-lint'
 Plugin 'posva/vim-vue'
 
