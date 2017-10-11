@@ -15,3 +15,4 @@
   cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
 [core]
 	editor = /usr/bin/vim
+	excludesfile = /Users/eriknygren/.gitignore_global
