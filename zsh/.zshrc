@@ -109,5 +109,7 @@ alias fdweb="cd ~/dev/fd-v5-web/"
 alias fdmonitor="cd ~/dev/fd-monitor/"
 alias captionhub="cd ~/dev/captionhub/"
 
+alias deleteorigs="find . -name '*.orig' -delete"
+
 eval "$(thefuck --alias)"
 prompt_context() {}
