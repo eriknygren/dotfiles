@@ -83,10 +83,18 @@ set clipboard=unnamed
 set laststatus=2
 
 let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['\.DS_Store$']
 
 let g:ctrlp_show_hidden=1
 let g:ctrlp_custom_ignore='/tmp/*'
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg --files %s'
+  let g:ctrlp_use_caching = 0
+  let g:ctrlp_switch_buffer = 'et'
+endif
 
 let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-L>'
@@ -135,6 +143,10 @@ map J <Plug>(expand_region_shrink)
 " Clear last search patten
 map <Leader>C :let @/ = ""
 
+" Some performance tweaks
+set ttyfast
+set lazyredraw
+
 " For CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -167,7 +179,8 @@ endfunc
 
 nnoremap <C-b> :call NumberToggle()<cr>
 
-let g:ackprg = 'ag --vimgrep --smart-case'
+let g:ackprg = 'rg --vimgrep --no-heading'
+
 cnoreabbrev ag Ack
 cnoreabbrev aG Ack
 cnoreabbrev Ag Ack
