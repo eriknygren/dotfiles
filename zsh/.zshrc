@@ -112,5 +112,9 @@ alias dev="cd ~/dev/"
 
 alias deleteorigs="find . -name '*.orig' -delete"
 
+alias motivate="sh ~/.dotfiles/motivate.sh"
+alias pdstart="echo 'Lets do this. ' && motivate && open focus://focus?minutes=25"
+alias pdcount="sh ~/.dotfiles/pomodoro_counter.sh"
+
 eval "$(thefuck --alias)"
 prompt_context() {}

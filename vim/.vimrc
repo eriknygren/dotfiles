@@ -81,7 +81,6 @@ set backspace=indent,eol,start
 set clipboard=unnamed
 
 set laststatus=2
-
 let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.DS_Store$']
 
