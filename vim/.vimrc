@@ -31,16 +31,11 @@ Plugin 'mileszs/ack.vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'gcorne/vim-sass-lint'
 Plugin 'posva/vim-vue'
 
 Plugin 'bling/vim-airline'
 
 Plugin 'jpo/vim-railscasts-theme'
-
-if has('nvim')
-  Plugin 'floobits/floobits-neovim'
-endif
 
 call vundle#end()
 filetype plugin indent on
