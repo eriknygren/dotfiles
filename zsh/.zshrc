@@ -118,3 +118,6 @@ alias pdcount="sh ~/.dotfiles/pomodoro_counter.sh"
 
 eval "$(thefuck --alias)"
 prompt_context() {}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'

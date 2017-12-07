@@ -6,6 +6,7 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/usr/local/opt/fzf
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
@@ -29,13 +30,13 @@ Plugin 'terryma/vim-expand-region'
 
 Plugin 'mileszs/ack.vim'
 Plugin 'thoughtbot/vim-rspec'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'posva/vim-vue'
 
 Plugin 'bling/vim-airline'
 
 Plugin 'jpo/vim-railscasts-theme'
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -79,15 +80,8 @@ set laststatus=2
 let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.DS_Store$']
 
-let g:ctrlp_show_hidden=1
-let g:ctrlp_custom_ignore='/tmp/*'
-"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
 if executable('rg')
   set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg --files %s'
-  let g:ctrlp_use_caching = 0
-  let g:ctrlp_switch_buffer = 'et'
 endif
 
 let g:user_emmet_mode='i'
@@ -120,6 +114,8 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+map <C-p> :GFiles<ENTER><cr> fzf
+
 " Mapping screen splitting
 map <Leader>v :vsp<ENTER>
 map <Leader>c :sp<ENTER>
@@ -140,11 +136,6 @@ map <Leader>C :let @/ = ""
 " Some performance tweaks
 set ttyfast
 set lazyredraw
-
-" For CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
 
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
