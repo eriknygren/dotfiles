@@ -145,6 +145,11 @@ let g:ale_linters = {
       \ 'scss': ['sass_lint'],
       \}
 
+let g:ale_fixers = {
+  \   'javascript': [
+  \       'eslint',
+  \   ],
+  \}
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
