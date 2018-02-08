@@ -16,3 +16,5 @@
 [core]
 	editor = /usr/bin/vim
 	excludesfile = /Users/eriknygren/.gitignore_global
+[commit]
+  template = ~/.gitmessage
