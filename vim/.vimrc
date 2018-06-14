@@ -125,10 +125,6 @@ map <Leader>i  gg=G'' " auto indent whole file
 map <F2> :mksession! ./.vim_session <cr> " Quick write session with F2
 map <F3> :source ./.vim_session <cr>     " And load session with F3
 
-" Vim expand
-map K <Plug>(expand_region_expand)
-map J <Plug>(expand_region_shrink)
-
 
 " Clear last search patten
 map <Leader>C :let @/ = ""
