@@ -154,17 +154,6 @@ autocmd FileType ['javascript', 'html', 'ruby']
 autocmd BufWritePre <buffer> StripWhitespace
 autocmd BufNewFile,BufRead *.js.jsx set ft=javascript.jsx
 
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber
-    set number
-  else
-    set relativenumber
-  endif
-endfunc
-
-nnoremap <C-b> :call NumberToggle()<cr>
-
 let g:ackprg = 'rg --vimgrep --no-heading'
 
 cnoreabbrev ag Ack
