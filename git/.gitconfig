@@ -8,7 +8,7 @@
 	name = Erik Nygren
 	email = erik.nygren6@gmail.com
 [merge]
-	tool = meld
+	tool = Kaleidoscope
 [mergetool]
   prompt = false
 [mergetool "meld"]
@@ -19,3 +19,12 @@
 	excludesfile = /Users/eriknygren/.gitignore_global
 [commit]
   template = ~/.gitmessage
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
