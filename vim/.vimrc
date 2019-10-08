@@ -34,8 +34,10 @@ Plugin 'mattn/emmet-vim'
 Plugin 'posva/vim-vue'
 
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'jpo/vim-railscasts-theme'
+Plugin 'morhetz/gruvbox'
 Plugin 'junegunn/fzf.vim'
 
 call vundle#end()
@@ -47,7 +49,12 @@ let mapleader = ','
 
 execute pathogen#infect()
 
-colorscheme railscasts
+let g:airline_theme='gruvbox'
+let g:gruvbox_contrast_light = 'hard'
+set background=light
+colorscheme gruvbox
+"colorscheme railscasts
+
 
 au BufReadPost *.html+mobile set syntax=html
 
@@ -164,5 +171,5 @@ cnoreabbrev AG Ack
 cnoreabbrev ack Ack
 
 " Airline template
-let g:airline_theme='dark'
+"let g:airline_theme='dark'
 let g:airline_powerline_fonts = 1

@@ -10,6 +10,7 @@ eval "$(rbenv init -)"
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
+export EDITOR=vim
 
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -106,11 +107,13 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 
 alias fdapi="cd ~/dev/fd-v5-api/"
 alias fdweb="cd ~/dev/fd-v5-web/"
-alias fdmonitor="cd ~/dev/fd-monitor/"
-alias captionhub="cd ~/dev/captionhub/"
+alias captionhub="cd ~/dev/captionhub_docker/"
+alias chl="cd ~/dev/captionhublive/"
 alias dev="cd ~/dev/"
 
 alias deleteorigs="find . -name '*.orig' -delete"
+
+alias dc='docker-compose -f ~/dev/captionhub_docker/scribe_systems/docker-compose/docker-compose.yml'
 
 alias motivate="sh ~/.dotfiles/motivate.sh"
 alias pdstart="echo 'Lets do this. ' && motivate && open focus://focus?minutes=25"
@@ -123,5 +126,7 @@ weather(){ curl -s "wttr.in/$1?m"}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
+eval "$(direnv hook zsh)"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
