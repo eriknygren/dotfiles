@@ -125,7 +125,10 @@ prompt_context() {}
 weather(){ curl -s "wttr.in/$1?m"}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --color=light --glob "!.git/*"'
+export FZF_DEFAULT_OPTS='
+  --color=fg:#839496
+'
 
 eval "$(direnv hook zsh)"
 
