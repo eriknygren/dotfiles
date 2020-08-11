@@ -169,6 +169,8 @@ let g:ale_fixers = {
   \       'eslint',
   \   ],
   \}
+
+let g:ale_ruby_rubocop_executable = 'bundle'
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
