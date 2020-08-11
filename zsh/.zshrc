@@ -1,3 +1,5 @@
+source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+##
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 #eval "$(hub alias -s)"
@@ -107,17 +109,18 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 
 alias fdapi="cd ~/dev/fd-v5-api/"
 alias fdweb="cd ~/dev/fd-v5-web/"
-alias captionhub="cd ~/dev/captionhub_docker/"
+alias captionhub="cd ~/dev/captionhub/"
 alias chl="cd ~/dev/captionhublive/"
 alias dev="cd ~/dev/"
 
 alias deleteorigs="find . -name '*.orig' -delete"
 
-alias dc='docker-compose -f ~/dev/captionhub_docker/scribe_systems/docker-compose/docker-compose.yml'
+alias dc='docker-compose -f ~/dev/captionhub/scribe_systems/docker-compose/docker-compose.yml'
+alias fixperms='dc exec scribe chown app.app -R tmp'
 
-alias motivate="sh ~/.dotfiles/motivate.sh"
+alias motivate="sh ~/dotfiles/motivate.sh"
 alias pdstart="echo 'Lets do this. ' && motivate && open focus://focus?minutes=25"
-alias pdcount="sh ~/.dotfiles/pomodoro_counter.sh"
+alias pdcount="sh ~/dotfiles/pomodoro_counter.sh"
 
 eval "$(thefuck --alias)"
 prompt_context() {}

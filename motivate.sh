@@ -1,3 +1,3 @@
 #!/bin/bash
-source ~/.dotfiles/quote_picker.sh
+source ~/dotfiles/quote_picker.sh
 echo "$selectedexpression"

@@ -49,9 +49,10 @@ let mapleader = ','
 
 execute pathogen#infect()
 
+set termguicolors
 let g:airline_theme='gruvbox'
-let g:gruvbox_contrast_light = 'hard'
-set background=light
+"let g:gruvbox_contrast_light = 'hard'
+"set background=light
 colorscheme gruvbox
 "colorscheme railscasts
 
