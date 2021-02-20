@@ -117,6 +117,7 @@ alias deleteorigs="find . -name '*.orig' -delete"
 
 alias dc='docker-compose -f ~/dev/captionhub/scribe_systems/docker-compose/docker-compose.yml'
 alias fixperms='dc exec scribe chown app.app -R tmp'
+alias ng='ngrok http -hostname=enygren.eu.ngrok.io  -region eu 80'
 
 alias motivate="sh ~/dotfiles/motivate.sh"
 alias pdstart="echo 'Lets do this. ' && motivate && open focus://focus?minutes=25"

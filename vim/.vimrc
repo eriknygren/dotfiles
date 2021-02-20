@@ -25,6 +25,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'w0rp/ale'
 Plugin 'godlygeek/tabular'
+Plugin 'https://github.com/airblade/vim-gitgutter.git'
 
 Plugin 'terryma/vim-expand-region'
 
@@ -159,6 +160,7 @@ set lazyredraw
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
       \ 'javascript': ['eslint'],
+      \ 'vue': ['eslint'],
       \ 'ruby': ['rubocop'],
       \ 'sass': ['sass_lint'],
       \ 'scss': ['sass_lint'],
@@ -167,6 +169,14 @@ let g:ale_linters = {
 let g:ale_fixers = {
   \   'javascript': [
   \       'eslint',
+  \       'prettier',
+  \   ],
+  \   'vue': [
+  \       'eslint',
+  \       'prettier',
+  \   ],
+  \   'ruby': [
+  \       'rubocop',
   \   ],
   \}
 
@@ -179,7 +189,7 @@ autocmd FileType ['javascript', 'html', 'ruby']
 autocmd BufWritePre <buffer> StripWhitespace
 autocmd BufNewFile,BufRead *.js.jsx set ft=javascript.jsx
 
-let g:ackprg = 'rg --vimgrep --no-heading'
+let g:ackprg = 'rg --vimgrep --no-heading -F'
 
 cnoreabbrev ag Ack
 cnoreabbrev aG Ack
