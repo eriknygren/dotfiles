@@ -154,8 +154,8 @@ map <F3> :source ./.vim_session <cr>     " And load session with F3
 map <F12> :syntax sync fromstart<cr>
 
 
-" Clear last search patten
-map <Leader>C :let @/ = ""
+" Clear last search pattern
+map <Leader>C :let @/ = ""<ENTER>
 
 " Some performance tweaks
 set ttyfast
