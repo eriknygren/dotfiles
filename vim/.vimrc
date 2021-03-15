@@ -110,7 +110,7 @@ endif
 let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-L>'
 
-let g:rspec_command = '!clear && echo dotenv bundle exec rspec {spec} && dotenv bundle exec rspec {spec}'
+let g:rspec_command = '!clear && echo rspec {spec} && rspec {spec}'
 let g:rspec_runner = 'os_x_iterm2'
 
 map <C-n> :NERDTreeToggle<CR>  " Maps NERD tree to Ctrl-n
