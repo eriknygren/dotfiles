@@ -143,6 +143,10 @@ map <C-p> :Files<ENTER><cr> fzf
 map <Leader>v :vsp<ENTER>
 map <Leader>c :sp<ENTER>
 
+
+" Map ALEFix command
+map <Leader>f :ALEFix<ENTER>
+
 map <Leader>i  gg=G'' " auto indent whole file
 
 map <F2> :mksession! ./.vim_session <cr> " Quick write session with F2
