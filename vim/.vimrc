@@ -57,6 +57,7 @@ let g:airline_theme='gruvbox'
 colorscheme gruvbox
 "colorscheme railscasts
 
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -137,7 +138,7 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-map <C-p> :Files<ENTER><cr> fzf
+map <C-p> :FZF<CR>
 
 " Mapping screen splitting
 map <Leader>v :vsp<ENTER>
