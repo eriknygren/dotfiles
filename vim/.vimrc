@@ -21,8 +21,8 @@ Plugin 'mxw/vim-jsx'
 
 Plugin 'ervandew/supertab'
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdcommenter'
 Plugin 'w0rp/ale'
 Plugin 'godlygeek/tabular'
 Plugin 'https://github.com/airblade/vim-gitgutter.git'
@@ -108,13 +108,15 @@ if executable('rg')
   set grepprg=rg\ --color=never
 endif
 
+let g:endwise_no_mappings = 1
+
 let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-L>'
 
 let g:rspec_command = '!clear && echo rspec {spec} && rspec {spec}'
 let g:rspec_runner = 'os_x_iterm2'
 
-map <C-n> :NERDTreeToggle<CR>  " Maps NERD tree to Ctrl-n
+map <C-n> :NvimTreeToggle<CR>  " Maps NERD tree to Ctrl-n
 
 runtime macros/matchit.vim
 

@@ -63,7 +63,7 @@ unsetopt nomatch
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bundler zsh-syntax-highlighting)
+plugins=(git bundler zsh-syntax-highlighting asdf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,6 +103,7 @@ stty stop undef
 setopt noflowcontrol
 
 alias reload=". ~/.zshrc"
+alias vim="nvim"
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
