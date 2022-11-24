@@ -2,6 +2,8 @@
 
 My setup, easiest managed with GNU stow
 
+eg, copy nvim config by checking out repo, and typing `stow neovim`
+
 ## HeyFocus pomodoro setup/usage
 
 First of all in `HeyFocus > Preferences > Scripting > Unfocus` add:

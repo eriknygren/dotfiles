@@ -1,8 +1,3 @@
-"Source this from ./config/nvim/init.vim,
-"so it becomes easier to manage with gnu stow
-"
-"
-
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
@@ -21,4 +16,4 @@ set guicursor=i:block
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
-lua require('lua/config')
+lua require('config')

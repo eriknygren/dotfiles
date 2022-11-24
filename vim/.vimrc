@@ -158,7 +158,7 @@ map <F12> :syntax sync fromstart<cr>
 
 
 " Clear last search pattern
-map <Leader>C :let @/ = ""<ENTER>
+map <Leader>C :let @/ = ""<ENTER> :call coc#float#close_all()<ENTER>
 
 " Some performance tweaks
 set ttyfast
