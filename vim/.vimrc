@@ -40,7 +40,7 @@ Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'jpo/vim-railscasts-theme'
 Plugin 'morhetz/gruvbox'
-Plugin 'junegunn/fzf.vim'
+"Plugin 'junegunn/fzf.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -57,23 +57,6 @@ let g:airline_theme='gruvbox'
 "set background=light
 colorscheme gruvbox
 "colorscheme railscasts
-
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
-
 au BufReadPost *.html+mobile set syntax=html
 
 syntax enable
@@ -141,7 +124,7 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-map <C-p> :FZF<CR>
+map <C-p> :Telescope find_files<CR>
 
 " Mapping screen splitting
 map <Leader>v :vsp<ENTER>
