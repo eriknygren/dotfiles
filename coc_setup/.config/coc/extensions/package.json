@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "coc-json": ">=1.7.0",
+    "coc-tsserver": ">=2.0.0",
+    "@yaegassy/coc-volar": ">=0.25.10",
+    "@yaegassy/coc-volar-tools": ">=0.3.0",
+    "coc-solargraph": ">=1.2.4"
+  },
+  "lastUpdate": 1683793752243
+}
