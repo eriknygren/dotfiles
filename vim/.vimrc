@@ -13,7 +13,6 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-fugitive'
 
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'pangloss/vim-javascript'
@@ -21,8 +20,6 @@ Plugin 'mxw/vim-jsx'
 
 Plugin 'ervandew/supertab'
 
-"Plugin 'scrooloose/nerdtree'
-"Plugin 'scrooloose/nerdcommenter'
 Plugin 'w0rp/ale'
 Plugin 'godlygeek/tabular'
 Plugin 'https://github.com/airblade/vim-gitgutter.git'
@@ -32,7 +29,6 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'mileszs/ack.vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'mattn/emmet-vim'
-"Plugin 'posva/vim-vue'
 Plugin 'leafOfTree/vim-vue-plugin'
 
 Plugin 'bling/vim-airline'
@@ -40,7 +36,6 @@ Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'jpo/vim-railscasts-theme'
 Plugin 'morhetz/gruvbox'
-"Plugin 'junegunn/fzf.vim'
 
 call vundle#end()
 filetype plugin indent on
