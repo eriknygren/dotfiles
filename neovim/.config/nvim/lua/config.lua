@@ -25,3 +25,34 @@ require'nvim-web-devicons'.setup {
  -- will get overriden by `get_icons` option
  default = true;
 }
+
+-- init lsp zero
+local lsp = require('lsp-zero').preset({})
+
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+end)
+
+lsp.ensure_installed({
+  'tsserver',
+  'eslint',
+  'solargraph'
+})
+
+-- " (Optional) Configure lua language server for neovim
+require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
+lsp.setup()
+-- end of init lsp zero
+
+local null_ls = require('null-ls')
+
+null_ls.setup({
+  sources = {
+    -- Replace these with the tools you have installed
+    -- make sure the source name is supported by null-ls
+    -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
+    null_ls.builtins.formatting.eslint,
+    null_ls.builtins.formatting.prettier,
+  }
+})
