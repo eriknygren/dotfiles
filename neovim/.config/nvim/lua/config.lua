@@ -36,14 +36,28 @@ end)
 lsp.ensure_installed({
   'tsserver',
   'eslint',
-  'solargraph'
+  'solargraph',
+  'volar',
+  'lua_ls'
 })
 
--- " (Optional) Configure lua language server for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
-lsp.setup()
--- end of init lsp zero
+require('lspconfig').solargraph.setup{
+  root_dir = function(fname)
+    return require("lspconfig").util.root_pattern("Gemfile", ".git")(fname) or vim.fn.getcwd()
+  end,
+  cmd = { os.getenv( "HOME" ) .. "/.rbenv/shims/solargraph", 'stdio' },
+  settings = {
+    Solargraph = {
+      autoformat = true,
+      completion = true,
+      diagnostic = true,
+      folding = true,
+      references = true,
+      rename = true,
+      symbols = true
+    },
+  }
+}
 
 local null_ls = require('null-ls')
 
@@ -54,5 +68,12 @@ null_ls.setup({
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
     null_ls.builtins.formatting.eslint,
     null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.rubocop,
   }
 })
+
+-- " (Optional) Configure lua language server for neovim
+require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
+lsp.setup()
+-- end of init lsp zero
