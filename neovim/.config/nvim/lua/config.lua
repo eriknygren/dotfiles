@@ -74,6 +74,8 @@ null_ls.setup({
 -- " (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+
 lsp.setup()
 -- end of init lsp zero
 --
