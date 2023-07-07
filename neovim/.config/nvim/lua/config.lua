@@ -67,7 +67,6 @@ null_ls.setup({
     -- make sure the source name is supported by null-ls
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
     null_ls.builtins.formatting.eslint,
-    null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.rubocop,
   }
 })
@@ -77,3 +76,4 @@ require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.setup()
 -- end of init lsp zero
+--
