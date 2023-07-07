@@ -124,7 +124,7 @@ map <Leader>c :sp<ENTER>
 
 
 " Map formatter command
-map <Leader>f :LspZeroFormat timeout=10000<CR>
+map <Leader>f :LspZeroFormat! timeout=10000<CR>
 
 map <Leader>i  gg=G'' " auto indent whole file
 
