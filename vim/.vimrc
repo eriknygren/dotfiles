@@ -123,9 +123,6 @@ map <Leader>v :vsp<ENTER>
 map <Leader>c :sp<ENTER>
 
 
-" Map formatter command
-map <Leader>f :LspZeroFormat! timeout=10000<CR>
-
 map <Leader>i  gg=G'' " auto indent whole file
 
 map <F12> :syntax sync fromstart<cr>

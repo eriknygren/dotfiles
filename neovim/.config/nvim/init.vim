@@ -22,8 +22,10 @@ Plug 'hrsh7th/cmp-nvim-lsp'     " Required
 Plug 'L3MON4D3/LuaSnip'         " Required
 
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
-Plug 'jose-elias-alvarez/null-ls.nvim'
 " End of LSP setup
+
+" ALE for formatting
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -36,3 +38,26 @@ let &inccommand = ""
 set guicursor=i:block
 
 lua require('config')
+
+
+map <Leader>f :ALEFix<CR>
+
+let g:ale_fixers = {
+  \   'javascript': [
+  \       'eslint',
+  \       'prettier',
+  \   ],
+  \   'typescript': [
+  \       'eslint',
+  \       'prettier',
+  \   ],
+  \   'vue': [
+  \       'eslint',
+  \       'prettier',
+  \   ],
+  \   'ruby': [
+  \       'rubocop',
+  \   ],
+  \}
+
+let g:ale_ruby_rubocop_executable = 'bundle'
