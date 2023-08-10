@@ -71,5 +71,20 @@ vim.diagnostic.config({
 })
 
 lsp.setup()
+
+local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
+
+cmp.setup({
+  preselect = 'item',
+  completion = {
+    completeopt = 'menu,menuone,noinsert'
+  },
+  mapping = {
+    ['<Tab>'] = cmp_action.tab_complete(),
+    ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
+    ['<CR>'] = cmp.mapping.confirm({select = false}),
+  }
+})
 -- end of init lsp zero
 --

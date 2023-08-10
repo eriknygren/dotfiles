@@ -18,7 +18,6 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
-Plugin 'ervandew/supertab'
 
 Plugin 'godlygeek/tabular'
 Plugin 'https://github.com/airblade/vim-gitgutter.git'
