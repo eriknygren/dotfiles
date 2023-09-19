@@ -64,11 +64,7 @@ require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 
-vim.diagnostic.config({
-  virtual_text = {
-    severity = { min = vim.diagnostic.severity.ERROR }
-  }
-})
+vim.diagnostic.config({virtual_text = false})
 
 lsp.setup()
 

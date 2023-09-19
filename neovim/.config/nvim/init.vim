@@ -11,6 +11,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 
+Plug 'github/copilot.vim'
+
 " LSP setup from https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/configuration-templates.md#vimscript-template
 Plug 'neovim/nvim-lspconfig'                           " Required
 Plug 'williamboman/mason.nvim', {'do': ':MasonUpdate'} " Optional
@@ -61,3 +63,7 @@ let g:ale_fixers = {
   \}
 
 let g:ale_ruby_rubocop_executable = 'bundle'
+
+" copilot settings
+imap <silent><script><expr> <C-w> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
