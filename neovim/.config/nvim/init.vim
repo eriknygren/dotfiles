@@ -5,8 +5,11 @@ source ~/.vimrc
 call plug#begin()
 
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'tpope/vim-fugitive'
+
+Plug 'romgrk/barbar.nvim' " tabs
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }

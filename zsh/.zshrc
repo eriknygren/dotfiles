@@ -107,10 +107,10 @@ alias vim="nvim"
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias dotfiles="cd ~/dotfiles/"
 
-alias fdapi="cd ~/dev/fd-v5-api/"
-alias fdweb="cd ~/dev/fd-v5-web/"
 alias captionhub="cd ~/dev/captionhub/"
+alias scribe="cd ~/dev/captionhub/scribe"
 alias chl="cd ~/dev/captionhublive/"
 alias dev="cd ~/dev/"
 
