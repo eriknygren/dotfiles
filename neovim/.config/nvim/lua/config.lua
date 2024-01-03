@@ -36,35 +36,29 @@ end)
 lsp.ensure_installed({
   'tsserver',
   'eslint',
-  'solargraph',
+  'ruby_ls',
   'volar',
   'lua_ls'
 })
-
-require('lspconfig').solargraph.setup{
-  root_dir = function(fname)
-    return require("lspconfig").util.root_pattern("Gemfile", ".git")(fname) or vim.fn.getcwd()
-  end,
-  cmd = { os.getenv( "HOME" ) .. "/.rbenv/shims/solargraph", 'stdio' },
-  settings = {
-    Solargraph = {
-      autoformat = true,
-      completion = true,
-      diagnostic = true,
-      folding = true,
-      references = true,
-      rename = true,
-      symbols = true
-    },
-  }
-}
 
 -- " (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 
-vim.diagnostic.config({virtual_text = false})
+require'lspconfig'.ruby_ls.setup({
+  init_options = {
+    enabled_features = {
+      "documentHighlights",
+      "documentSymbols",
+      "foldingRanges",
+      "selectionRanges",
+      -- "semanticHighlighting",
+      "formatting",
+      "codeActions",
+    },
+  },
+})
 
 lsp.setup()
 
@@ -82,6 +76,14 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({select = false}),
   }
 })
+
+vim.diagnostic.config({virtual_text = false})
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics,
+  {
+    virtual_text = false,
+  }
+)
 -- end of init lsp zero
 
 
@@ -91,11 +93,11 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 -- Move to previous/next
-map('n', '<A-Left>', '<Cmd>BufferPrevious<CR>', opts)
-map('n', '<A-Right>', '<Cmd>BufferNext<CR>', opts)
+map('n', '<S-h>', '<Cmd>BufferPrevious<CR>', opts)
+map('n', '<S-l>', '<Cmd>BufferNext<CR>', opts)
 -- Re-order to previous/next
-map('n', '<A-,>', '<Cmd>BufferMovePrevious<CR>', opts)
-map('n', '<A-.>', '<Cmd>BufferMoveNext<CR>', opts)
+map('n', '<A-Left>', '<Cmd>BufferMovePrevious<CR>', opts)
+map('n', '<A-Right>', '<Cmd>BufferMoveNext<CR>', opts)
 -- Goto buffer in position...
 map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts)
 map('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', opts)
@@ -110,6 +112,6 @@ map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
 -- Pin/unpin buffer
 map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
 -- Close buffer
-map('n', '<A-q>', '<Cmd>BufferClose<CR>', opts)
-map('n', '<A-Q>', '<Cmd>only<CR><Cmd>BufferCloseAllButCurrent<CR>', opts)
+map('n', '<leader>q', '<Cmd>BufferClose<CR>', opts)
+map('n', '<leader>Q', '<Cmd>only<CR><Cmd>BufferCloseAllButCurrent<CR>', opts)
 -- end of barbar setup

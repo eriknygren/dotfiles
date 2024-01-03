@@ -9,6 +9,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
 
+# ASDF
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
@@ -63,7 +66,7 @@ unsetopt nomatch
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bundler zsh-syntax-highlighting asdf)
+plugins=(git bundler zsh-syntax-highlighting asdf git-open)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -139,3 +142,5 @@ export FZF_DEFAULT_OPTS='
 eval "$(direnv hook zsh)"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

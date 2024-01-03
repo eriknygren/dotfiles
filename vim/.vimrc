@@ -43,13 +43,12 @@ filetype plugin indent on
 let mapleader = ','
 
 execute pathogen#infect()
-
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
+colorscheme gruvbox
 let g:airline_theme='gruvbox'
 "let g:gruvbox_contrast_light = 'hard'
 "set background=light
-colorscheme gruvbox
-"colorscheme railscasts
 au BufReadPost *.html+mobile set syntax=html
 
 syntax enable
