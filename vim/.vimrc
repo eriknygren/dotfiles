@@ -145,6 +145,8 @@ cnoreabbrev Ag Ack
 cnoreabbrev AG Ack
 cnoreabbrev ack Ack
 
+command Mergetool :Gvdiffsplit!
+
 " Airline template
 "let g:airline_theme='dark'
 let g:airline_powerline_fonts = 1
