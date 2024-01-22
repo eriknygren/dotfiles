@@ -89,7 +89,7 @@ let g:endwise_no_mappings = 1
 let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-L>'
 
-map <C-n> :NvimTreeToggle<CR>  " Maps Nvimtree to Ctrl-n
+map <C-n> :NvimTreeFindFileToggle<CR>  " Maps Nvimtree to Ctrl-n
 
 runtime macros/matchit.vim
 
