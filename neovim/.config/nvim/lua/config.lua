@@ -34,10 +34,10 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.ensure_installed({
-  'tsserver',
+  --'tsserver',
   'eslint',
   'ruby_ls',
-  'volar',
+  'volar@1.8.27',
   'lua_ls'
 })
 
@@ -59,6 +59,11 @@ require'lspconfig'.ruby_ls.setup({
     },
   },
 })
+
+-- This runs volar in takeover mode, otherwise typescript files can't read vue files.
+require'lspconfig'.volar.setup{
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+}
 
 lsp.setup()
 
