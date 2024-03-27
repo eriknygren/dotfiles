@@ -34,10 +34,10 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.ensure_installed({
-  --'tsserver',
+  'tsserver',
   'eslint',
   'ruby_ls',
-  'volar@1.8.27',
+  'volar',
   'lua_ls'
 })
 
@@ -60,10 +60,24 @@ require'lspconfig'.ruby_ls.setup({
   },
 })
 
--- This runs volar in takeover mode, otherwise typescript files can't read vue files.
-require'lspconfig'.volar.setup{
-  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+local mason_registry = require('mason-registry')
+local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
+
+require'lspconfig'.tsserver.setup {
+  init_options = {
+    plugins = {
+      {
+        name = '@vue/typescript-plugin',
+        location = vue_language_server_path,
+        languages = { 'vue' },
+      },
+    },
+  },
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
 }
+
+-- No need to set `hybridMode` to `true` as it's the default value
+require'lspconfig'.volar.setup {}
 
 lsp.setup()
 
@@ -73,7 +87,7 @@ local cmp_action = require('lsp-zero').cmp_action()
 cmp.setup({
   preselect = 'item',
   completion = {
-    completeopt = 'menu,menuone,noinsert'
+    completeopt = 'menu,menuone,noinsert',
   },
   mapping = {
     ['<Tab>'] = cmp_action.tab_complete(),
