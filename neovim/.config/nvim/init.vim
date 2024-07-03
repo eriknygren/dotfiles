@@ -65,6 +65,8 @@ let g:ale_fixers = {
   \   ],
   \}
 
+let g:ale_disable_lsp = 0
+
 let g:ale_ruby_rubocop_executable = 'bundle'
 
 " copilot settings

@@ -36,7 +36,7 @@ end)
 lsp.ensure_installed({
   'tsserver',
   'eslint',
-  'ruby_ls',
+  'ruby_lsp',
   'volar',
   'lua_ls'
 })
@@ -46,7 +46,7 @@ require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 
-require'lspconfig'.ruby_ls.setup({
+require'lspconfig'.ruby_lsp.setup({
   init_options = {
     enabled_features = {
       "documentHighlights",
@@ -69,7 +69,7 @@ require'lspconfig'.tsserver.setup {
       {
         name = '@vue/typescript-plugin',
         location = vue_language_server_path,
-        languages = { 'vue' },
+        languages = {"javascript", "typescript", "vue"},
       },
     },
   },
