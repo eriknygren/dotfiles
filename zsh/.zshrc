@@ -10,7 +10,8 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
 
 # ASDF
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+#. /opt/homebrew/opt/asdf/libexec/asdf.sh
+. /Users/eriknygren/homebrew/opt/asdf/libexec/asdf.sh
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
@@ -139,8 +140,11 @@ export FZF_DEFAULT_OPTS='
   --ansi
 '
 
+# Setup following https://chennylmf.medium.com/mac-pentest-series-install-homebrew-without-sudo-privilege-ca2bdbb772fe
+export HOMEBREW_PREFIX=~/local
+
 eval "$(direnv hook zsh)"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/homebrew/bin:HOMEBREW_PREFIX/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
