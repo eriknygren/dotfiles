@@ -12,7 +12,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'romgrk/barbar.nvim' " tabs
 
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
 
 Plug 'github/copilot.vim'
 
@@ -59,9 +59,13 @@ let g:ale_fixers = {
   \   'vue': [
   \       'eslint',
   \       'prettier',
+  \       'stylelint',
   \   ],
   \   'ruby': [
   \       'rubocop',
+  \   ],
+  \   'scss': [
+  \       'stylelint',
   \   ],
   \}
 
