@@ -48,14 +48,25 @@ vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 
 require'lspconfig'.ruby_lsp.setup({
   init_options = {
-    enabled_features = {
-      "documentHighlights",
-      "documentSymbols",
-      "foldingRanges",
-      "selectionRanges",
-      -- "semanticHighlighting",
-      "formatting",
-      "codeActions",
+    enabledFeatures = {
+      codeActions = true,
+      codeLens = true,
+      completion = true,
+      definition = true,
+      diagnostics = true,
+      documentHighlights = true,
+      documentLink = true,
+      documentSymbols = true,
+      foldingRanges = true,
+      formatting = false,
+      hover = true,
+      inlayHint = true,
+      onTypeFormatting = false,
+      selectionRanges = true,
+      semanticHighlighting = false,
+      signatureHelp = true,
+      typeHierarchy = true,
+      workspaceSymbol = true
     },
   },
 })
