@@ -38,6 +38,7 @@ lsp.ensure_installed({
   'eslint',
   'ruby_lsp',
   'volar',
+  'stylelint_lsp',
   'lua_ls'
 })
 
