@@ -37,6 +37,7 @@ lsp.ensure_installed({
   'ts_ls',
   'eslint',
   'ruby_lsp',
+  'cssls',
   'volar',
   'stylelint_lsp',
   'lua_ls'
@@ -50,24 +51,24 @@ vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 require'lspconfig'.ruby_lsp.setup({
   init_options = {
     enabledFeatures = {
-      codeActions = true,
-      codeLens = true,
-      completion = true,
+      codeActions = false,
+      codeLens = false,
+      completion = false,
       definition = true,
-      diagnostics = true,
-      documentHighlights = true,
-      documentLink = true,
-      documentSymbols = true,
-      foldingRanges = true,
+      diagnostics = false,
+      documentHighlights = false,
+      documentLink = false,
+      documentSymbols = false,
+      foldingRanges = false,
       formatting = false,
-      hover = true,
-      inlayHint = true,
+      hover = false,
+      inlayHint = false,
       onTypeFormatting = false,
-      selectionRanges = true,
+      selectionRanges = false,
       semanticHighlighting = false,
-      signatureHelp = true,
-      typeHierarchy = true,
-      workspaceSymbol = true
+      signatureHelp = false,
+      typeHierarchy = false,
+      workspaceSymbol = false
     },
   },
 })
@@ -82,6 +83,14 @@ require'lspconfig'.ts_ls.setup {
         name = '@vue/typescript-plugin',
         location = vue_language_server_path,
         languages = {"javascript", "typescript", "vue"},
+        init_options = {
+          languageFeatures = {
+            completion = {
+              defaultTagNameCase = 'pascalCase',
+              defaultAttrNameCase = 'camelCase',
+            },
+          },
+        },
       },
     },
   },
@@ -95,6 +104,11 @@ lsp.setup()
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+require'lspconfig'.cssls.setup {
+  capabilities = capabilities,
+}
 
 cmp.setup({
   preselect = 'item',
