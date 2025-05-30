@@ -94,6 +94,7 @@ return require('lazy').setup({
   {
     'github/copilot.vim',
     config = function()
+      vim.g.copilot_enabled = false
       vim.g.copilot_no_tab_map = true
       vim.api.nvim_set_keymap('i', '<C-w>', 'copilot#Accept("<CR>")', { expr = true, silent = true })
     end,

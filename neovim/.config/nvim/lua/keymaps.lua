@@ -54,6 +54,24 @@ map('n', '<Leader>ca', vim.lsp.buf.code_action, opts)
 
 -- Copilot accept with Ctrl-w
 -- This will be configured via lazy.nvim plugin config
+local copilot_enabled = false
+local function toggle_copilot()
+  if copilot_enabled then
+    vim.g.copilot_enabled = false
+    copilot_enabled = false
+    vim.cmd('Copilot disable')
+    print("Copilot disabled")
+  else
+    vim.g.copilot_enabled = true
+    copilot_enabled = true
+    vim.cmd('Copilot enable')
+    print("Copilot enabled")
+  end
+end
+
+-- Map f10, for both normal and insert mode
+vim.keymap.set('n', '<F10>', toggle_copilot, { noremap = true, silent = false, desc = "Toggle Copilot" })
+vim.keymap.set('i', '<F10>', toggle_copilot, { noremap = true, silent = false, desc = "Toggle Copilot" })
 
 -- Diagnostics navigation
 map('n', '[d', vim.diagnostic.goto_prev, opts)
