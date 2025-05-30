@@ -53,7 +53,13 @@ require'lspconfig'.ts_ls.setup {
   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
 }
 
-require('lspconfig').volar.setup({})
+require('lspconfig').volar.setup({
+  on_attach = function(client, bufnr)
+    -- Disable Volar's formatting, using eslint only for vue files
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+  end,
+})
 
 -- CSS Language Server
 require('lspconfig').cssls.setup({
