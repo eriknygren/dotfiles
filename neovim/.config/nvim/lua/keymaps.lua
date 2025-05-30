@@ -13,7 +13,7 @@ map('i', '<C-s>', '<Esc>:w<CR>', opts)
 map('v', '<C-s>', '<Esc>:w<CR>', opts)
 
 -- File explorer
-map('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
+map('n', '<C-n>', ':NvimTreeFindFileToggle<CR>', opts)
 
 -- Telescope mappings
 map('n', '<C-p>', ':Telescope find_files<CR>', opts)

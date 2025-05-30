@@ -7,7 +7,6 @@
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
   "copilot.vim": { "branch": "release", "commit": "3955014c503b0cd7b30bc56c86c56c0736ca0951" },
   "emmet-vim": { "branch": "master", "commit": "6c511a8d7d2863066f32e25543e2bb99d505172c" },
-  "gitsigns.nvim": { "branch": "main", "commit": "8bdaccdb897945a3c99c1ad8df94db0ddf5c8790" },
   "gruvbox": { "branch": "master", "commit": "697c00291db857ca0af00ec154e5bd514a79191f" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lsp-zero.nvim": { "branch": "v2.x", "commit": "320d5913bc5a0b0f15537e32777331d2323ab7f8" },
