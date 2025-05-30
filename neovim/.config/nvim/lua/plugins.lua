@@ -61,10 +61,7 @@ return require('lazy').setup({
     'lewis6991/gitsigns.nvim',
     config = function() require('config.gitsigns') end,
   },
-  {
-    'tpope/vim-fugitive',
-    lazy = false,
-  },
+  'tpope/vim-fugitive',
   -- Buffer line
   {
     'romgrk/barbar.nvim',
