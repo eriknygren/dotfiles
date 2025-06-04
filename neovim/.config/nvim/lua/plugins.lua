@@ -34,6 +34,26 @@ return require('lazy').setup({
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function() require('config.nvimtree') end,
   },
+  -- Snacks notifier to help with disappearing status bar messages
+  {
+    "folke/snacks.nvim",
+    opts = {
+      -- Disable all snacks except notifier
+      bigfile = { enabled = false },
+      dashboard = { enabled = false },
+      indent = { enabled = false },
+      input = { enabled = false },
+      notifier = { enabled = true },
+      quickfile = { enabled = false },
+      scroll = { enabled = false },
+      statuscolumn = { enabled = false },
+      terminal = { enabled = false },
+      toggle = { enabled = false },
+      win = { enabled = false },
+      words = { enabled = false },
+      zen = { enabled = false },
+    },
+  },
 
   -- LSP and completion
   {
@@ -50,8 +70,6 @@ return require('lazy').setup({
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'hrsh7th/cmp-path' },
       { 'hrsh7th/cmp-cmdline' },
-      { 'L3MON4D3/LuaSnip' },
-      { 'saadparwaiz1/cmp_luasnip' },
     },
     config = function() require('config.lsp') end,
   },

@@ -60,12 +60,12 @@ local function toggle_copilot()
     vim.g.copilot_enabled = false
     copilot_enabled = false
     vim.cmd('Copilot disable')
-    print("Copilot disabled")
+    require("snacks").notifier.notify("Copilot disabled", { level = "info" })
   else
     vim.g.copilot_enabled = true
     copilot_enabled = true
     vim.cmd('Copilot enable')
-    print("Copilot enabled")
+    require("snacks").notifier.notify("Copilot enabled", { level = "info" })
   end
 end
 
