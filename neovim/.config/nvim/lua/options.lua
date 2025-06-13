@@ -23,6 +23,12 @@ opt.laststatus = 2
 opt.ttyfast = true
 opt.lazyredraw = true
 opt.autowriteall = true
+opt.inccommand = ""
+opt.laststatus = 3
+opt.splitright = true
+opt.pumheight = 10
+
+g._ts_force_sync_parsing = true
 
 -- Set leader key
 g.mapleader = ','
@@ -37,3 +43,12 @@ end
 if vim.fn.executable('rg') == 1 then
   opt.grepprg = 'rg --color=never'
 end
+
+-- Disable LSP progress messages that clear the command line
+vim.lsp.handlers["$/progress"] = function() end
+
+
+-- Type :Mergetool to get a 3 pane split diff mergy view thing
+vim.api.nvim_create_user_command('Mergetool', function()
+  vim.cmd('Gvdiffsplit!')
+end, {})

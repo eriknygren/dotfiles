@@ -30,6 +30,23 @@ return require('lazy').setup({
     config = function() require('config.telescope') end,
   },
   {
+    'mileszs/ack.vim',
+    lazy = false,
+    priority = 999,
+    config = function()
+      -- Use ripgrep instead of ack
+      vim.g.ackprg = 'rg --vimgrep --no-heading -F'
+      vim.cmd([[
+      cnoreabbrev ag Ack
+      cnoreabbrev aG Ack
+      cnoreabbrev Ag Ack
+      cnoreabbrev AG Ack
+      cnoreabbrev ack Ack
+      ]])
+      vim.cmd('runtime! plugin/ack.vim')
+    end,
+  },
+  {
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function() require('config.nvimtree') end,
@@ -38,8 +55,7 @@ return require('lazy').setup({
   {
     "folke/snacks.nvim",
     opts = {
-      -- Disable all snacks except notifier
-      bigfile = { enabled = false },
+      bigfile = { enabled = true },
       dashboard = { enabled = false },
       indent = { enabled = false },
       input = { enabled = false },

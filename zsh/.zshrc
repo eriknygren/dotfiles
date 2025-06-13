@@ -148,3 +148,6 @@ eval "$(direnv hook zsh)"
 export PATH="$HOME/.yarn/bin:$HOME/homebrew/bin:HOMEBREW_PREFIX/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Created by `pipx` on 2025-06-05 11:41:45
+export PATH="$PATH:/Users/eriknygren/.local/bin"
