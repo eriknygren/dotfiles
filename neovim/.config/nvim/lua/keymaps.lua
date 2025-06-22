@@ -73,6 +73,17 @@ end
 vim.keymap.set('n', '<F10>', toggle_copilot, { noremap = true, silent = false, desc = "Toggle Copilot" })
 vim.keymap.set('i', '<F10>', toggle_copilot, { noremap = true, silent = false, desc = "Toggle Copilot" })
 
+-- Get the current relative path into the clipboard, leader yp
+vim.api.nvim_create_user_command('YankPath', function()
+  local cwd = vim.fn.getcwd()
+  local full_path = vim.fn.expand('%:p')
+  local relative_path = full_path:gsub(cwd .. '/', '')
+  vim.fn.setreg('+', relative_path)
+  require("snacks").notifier.notify('Yanked: ' .. relative_path, { level = 'info' })
+end, {})
+
+vim.keymap.set('n', '<leader>yp', '<cmd>YankPath<cr>', { desc = 'Yank file path' })
+
 -- Diagnostics navigation
 map('n', '[d', vim.diagnostic.goto_prev, opts)
 map('n', ']d', vim.diagnostic.goto_next, opts)

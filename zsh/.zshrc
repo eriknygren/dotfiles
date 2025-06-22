@@ -133,6 +133,8 @@ prompt_context() {}
 
 weather(){ curl -s "wttr.in/$1?m"}
 
+[[ -f "$HOME/.unshared_aliases" ]] && source "$HOME/.unshared_aliases"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow  --glob "!.git/*"'
 export FZF_DEFAULT_OPTS='
