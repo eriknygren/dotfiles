@@ -16,8 +16,8 @@ return require('lazy').setup({
   -- Color scheme
   {
     "morhetz/gruvbox",
-    lazy = false,        -- Load immediately
-    priority = 1000,     -- Load before other plugins
+    lazy = false,    -- Load immediately
+    priority = 1000, -- Load before other plugins
     config = function()
       vim.g.gruvbox_contrast_dark = 'soft'
       vim.cmd.colorscheme('gruvbox')
@@ -57,6 +57,7 @@ return require('lazy').setup({
     opts = {
       bigfile = { enabled = true },
       dashboard = { enabled = false },
+      git = { enabled = true },
       indent = { enabled = false },
       input = { enabled = false },
       notifier = { enabled = true },
@@ -91,6 +92,10 @@ return require('lazy').setup({
   },
 
   -- Git integration
+  {
+    'lewis6991/gitsigns.nvim',
+    config = function() require('config.gitsigns') end,
+  },
   'tpope/vim-fugitive',
   -- Buffer line
   {
@@ -104,7 +109,22 @@ return require('lazy').setup({
   'pangloss/vim-javascript',
   {
     'leafOfTree/vim-vue-plugin',
-    ft = 'vue'
+    ft = 'vue',
+    config = function()
+      vim.g.vim_vue_plugin_config = {
+        syntax = {
+          template = { 'html' },
+          script = { 'javascript', 'typescript' },
+          style = { 'css', 'scss' },
+        },
+        full_syntax = {},
+        initial_indent = {},
+        attribute = 0,
+        keyword = 0,
+        foldexpr = 0,
+        debug = 0,
+      }
+    end,
   },
 
   -- Editing enhancements

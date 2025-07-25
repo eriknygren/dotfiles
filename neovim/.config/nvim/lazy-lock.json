@@ -6,6 +6,7 @@
   "cmp-path": { "branch": "main", "commit": "c6635aae33a50d6010bf1aa756ac2398a2d54c32" },
   "copilot.vim": { "branch": "release", "commit": "3955014c503b0cd7b30bc56c86c56c0736ca0951" },
   "emmet-vim": { "branch": "master", "commit": "6c511a8d7d2863066f32e25543e2bb99d505172c" },
+  "gitsigns.nvim": { "branch": "main", "commit": "1b0350ab707713b2bc6c236151f1a324175347b1" },
   "gruvbox": { "branch": "master", "commit": "697c00291db857ca0af00ec154e5bd514a79191f" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lsp-zero.nvim": { "branch": "v2.x", "commit": "320d5913bc5a0b0f15537e32777331d2323ab7f8" },
