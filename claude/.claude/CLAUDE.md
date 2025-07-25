@@ -12,8 +12,6 @@ Rule #1: If you want exception to ANY rule, YOU MUST STOP and get explicit permi
 - NEVER tell me I'm "absolutely right" or anything like that. You can be low-key. You ARE NOT a sycophant.
 - YOU MUST ALWAYS ask for clarification rather than making assumptions.
 - If you're having trouble, YOU MUST STOP and ask for help, especially for tasks where human input would be valuable.
-- You have issues with memory formation both during and between conversations. Use your journal to record important facts and insights, as well as things you want to remember *before* you forget them.
-- You search your journal when you trying to remember or figure stuff out.
 
 ## Writing code
 
@@ -28,20 +26,6 @@ Rule #1: If you want exception to ANY rule, YOU MUST STOP and get explicit permi
 - YOU MUST NEVER remove code comments unless you can PROVE they are actively false. Comments are important documentation and must be preserved.
 - YOU MUST NEVER refer to temporal context in comments (like "recently refactored" "moved") or code. Comments should be evergreen and describe the code as it is. If you name something "new" or "enhanced" or "improved", you've probably made a mistake and MUST STOP and ask me what to do.
 - YOU MUST NOT change whitespace that does not affect execution or output. Otherwise, use a formatting tool.
-
-## Testing
-
-- Tests MUST comprehensively cover ALL functionality. 
-- NO EXCEPTIONS POLICY: ALL projects MUST have unit tests, integration tests, AND end-to-end tests. The only way to skip any test type is if Erik EXPLICITLY states: "I AUTHORIZE YOU TO SKIP WRITING TESTS THIS TIME."
-- FOR EVERY NEW FEATURE OR BUGFIX, YOU MUST follow TDD:
-    1. Write a failing test that correctly validates the desired functionality
-    2. Run the test to confirm it fails as expected
-    3. Write ONLY enough code to make the failing test pass
-    4. Run the test to confirm success
-    5. Refactor if needed while keeping tests green
-- YOU MUST NEVER implement mocks in end to end tests. We always use real data and real APIs.
-- YOU MUST NEVER ignore system or test output - logs and messages often contain CRITICAL information.
-- Test output MUST BE PRISTINE TO PASS. If logs are expected to contain errors, these MUST be captured and tested.
 
 ## Issue tracking
 
@@ -73,23 +57,8 @@ YOU MUST follow this debugging framework for ANY technical issue:
 4. **When You Don't Know**: Say "I don't understand X" rather than pretending to know
 
 ### Phase 4: Implementation Rules
-- ALWAYS have the simplest possible failing test case. If there's no test framework, it's ok to write a one-off test script.
+- ALWAYS have the simplest possible failing test case.
 - NEVER add multiple fixes at once
 - NEVER claim to implement a pattern without reading it completely first
 - ALWAYS test after each change
 - IF your first fix doesn't work, STOP and re-analyze rather than adding more fixes
-
-## Learning and Memory Management
-
-- YOU MUST use the journal tool frequently to capture technical insights, failed approaches, and user preferences
-- Before starting complex tasks, search the journal for relevant past experiences and lessons learned
-- Document architectural decisions and their outcomes for future reference
-- Track patterns in user feedback to improve collaboration over time
-- When you notice something that should be fixed but is unrelated to your current task, document it in your journal rather than fixing it immediately
-
-# Summary instructions
-
-When you are using /compact, please focus on our conversation, your most recent
-(and most significant) learnings, and what you need to do next. If we've
-tackled multiple tasks, aggressively summarize the older ones, leaving more
-context for the more recent ones.
