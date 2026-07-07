@@ -54,6 +54,16 @@ require'lspconfig'.ts_ls.setup {
   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
 }
 
+require('lspconfig').eslint.setup({
+  on_new_config = function(config, new_root_dir)
+    config.settings.workspaceFolder = {
+      uri = new_root_dir,
+      name = vim.fn.fnamemodify(new_root_dir, ':t'),
+    }
+    config.settings.experimental = { useFlatConfig = true }
+  end,
+})
+
 require('lspconfig').volar.setup({
   on_attach = function(client, bufnr)
     -- Disable Volar's formatting, using eslint only for vue files
