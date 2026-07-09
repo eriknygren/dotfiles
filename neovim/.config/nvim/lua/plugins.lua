@@ -19,7 +19,8 @@ return require('lazy').setup({
     lazy = false,    -- Load immediately
     priority = 1000, -- Load before other plugins
     config = function()
-      vim.g.gruvbox_contrast_dark = 'soft'
+      vim.o.background = 'light'
+      vim.g.gruvbox_contrast_light = 'hard'
       vim.cmd.colorscheme('gruvbox')
     end,
   },
