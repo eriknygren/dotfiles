@@ -75,13 +75,10 @@ return require('lazy').setup({
 
   -- LSP and completion
   {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
+    'neovim/nvim-lspconfig',
     dependencies = {
-      -- LSP Support
-      { 'neovim/nvim-lspconfig' },
-      { 'williamboman/mason.nvim',           version = "^1.0.0" },
-      { 'williamboman/mason-lspconfig.nvim', version = "^1.0.0" },
+      { 'mason-org/mason.nvim',           version = "^2.0.0" },
+      { 'mason-org/mason-lspconfig.nvim', version = "^2.0.0" },
 
       -- Autocompletion
       { 'hrsh7th/nvim-cmp' },
